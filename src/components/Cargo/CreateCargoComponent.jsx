@@ -87,15 +87,16 @@ class CreateCargoComponent extends Component {
             window.location.reload();
           })
           .catch((error) => {
-            console.error(error);
             if (error.response && error.response.data && error.response.data.errors) {
               this.setState({ loading: false, errors: error.response.data.errors });
-            } else if (error.response && error.response.data && error.response.data.Errors) {
-              this.setState({ loading: false, errors: error.response.data.Errors });
+            } else if (error.response && error.response.data && error.response.data) {
+              this.setState({ loading: false, errors: error.response.data });
             } else {
               this.setState({ loading: false, errors: [error.message] });
             }
           });
+
+          console.log(this.state.errors);
       };
       
 
@@ -184,10 +185,10 @@ class CreateCargoComponent extends Component {
                   <div>
                     <Alert variant="danger">
                       <Alert.Heading>
-                        Ошибка при добавлении элемента.
+                        Ошибка при добавлении груза.
                       </Alert.Heading>
                       {Object.keys(this.state.errors).map((key) => (
-                        <p>{this.state.errors[key]}</p>
+                        <p key={key}>{this.state.errors[key]}</p>
                       ))}
                     </Alert>
                   </div>
