@@ -39,7 +39,7 @@ id: this.props.match.params.id, errors: null,
   componentDidMount() {
     //Bid
     BidService.getBid().then((res) => {
-      const options = res.data.map((d) => ({
+      const options = res.data.data.map((d) => ({
         value: d.id,
         label: d.id,
       }));

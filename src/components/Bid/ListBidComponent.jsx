@@ -69,7 +69,7 @@ class ListBidComponent extends Component {
     BidService.getBid()
       .then((res) => {
         this.setState({
-          bid: res.data,
+          bid: res.data.data,
           loading: true,
           statusCode: res.status,
           isDelete: 0,

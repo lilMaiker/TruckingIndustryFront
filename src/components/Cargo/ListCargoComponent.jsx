@@ -52,7 +52,7 @@ class ListCargoComponent extends Component {
     CargoService.getCargo()
       .then((res) => {
         this.setState({
-          cargo: res.data,
+          cargo: res.data.data,
           loading: true,
           statusCode: res.status,
           isDelete: 0,

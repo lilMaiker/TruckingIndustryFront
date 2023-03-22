@@ -132,7 +132,7 @@ class UpdateBidComponent extends Component {
       });
 
     BidService.getBidById(this.state.id).then((res) => {
-      let bidjson = res.data;
+      let bidjson = res.data.data;
       this.setState({
         oIdCar: bidjson.carsId,
         oNameCar: bidjson.cars.brandTrailer,

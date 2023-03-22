@@ -60,7 +60,7 @@ class UpdateCargoComponent extends Component {
 
     //Bid
     BidService.getBid().then((res) => {
-      const options = res.data.map((d) => ({
+      const options = res.data.data.map((d) => ({
         value: d.id,
         label: d.id,
       }));
@@ -68,7 +68,7 @@ class UpdateCargoComponent extends Component {
     });
 
     CargoService.getCargoById(this.state.id).then((res) => {
-      let cargojson = res.data;
+      let cargojson = res.data.data;
       this.setState({
         namecargo: cargojson.nameCargo,
         weightcargo: cargojson.weightCargo,
@@ -95,8 +95,13 @@ class UpdateCargoComponent extends Component {
         window.location.reload();
       })
       .catch((error) => {
-        console.error(error);
-        this.setState({ errors: error.response.data.errors });
+        if (error.response && error.response.data && error.response.data.errors) {
+          this.setState({ loading: false, errors: error.response.data.errors });
+        } else if (error.response && error.response.data && error.response.data) {
+          this.setState({ loading: false, errors: error.response.data });
+        } else {
+          this.setState({ loading: false, errors: [error.message] });
+        }
       });
   };
 
@@ -191,7 +196,7 @@ class UpdateCargoComponent extends Component {
                   <div>
                     <Alert variant="danger">
                       <Alert.Heading>
-                        Ошибка при редактировании элемента.
+                        Ошибка при редактировании груза.
                       </Alert.Heading>
                       {Object.keys(this.state.errors).map((key) => (
                         <p>{this.state.errors[key]}</p>

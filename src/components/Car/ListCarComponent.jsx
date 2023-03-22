@@ -113,6 +113,8 @@ class ListCarComponent extends Component {
                     <th scope="col">Номер трейлера</th>
                     <th scope="col">Дата тех. обслуживания</th>
                     <th scope="col">Макс. вес, кг.</th>
+                    <th scope="col">Свободно, кг.</th>
+                    <th scope="col">Занято, кг.</th>
                     <th scope="col">Открытый борт</th>
                     <th scope="col">Холодильник</th>
                     <th scope="col">Тент</th>
@@ -128,6 +130,8 @@ class ListCarComponent extends Component {
                         <td> {car.trailerNumber} </td>
                         <td> {formatDate(car.lastDateTechnicalInspection)} </td>
                         <td> {car.maxWeight} </td>
+                        <td> {car.freeWeight} </td>
+                        <td> {car.loadedWeight} </td>
                         <td> {car.withOpenSide ? (<span>Присутствует</span>) : (<span>Отсутствует</span>)}</td>
                         <td> {car.withRefrigerator ? (<span>Присутствует</span>) : (<span>Отсутствует</span>)} </td>
                         <td> {car.withTent ? (<span>Присутствует</span>) : (<span>Отсутствует</span>)} </td>
