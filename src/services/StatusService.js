@@ -9,19 +9,19 @@ class StatusService {
         return axios.get(STATUS_API_BASEURL, { headers: authHeader() });
     }
 
-    createStatus(status){
+    async createStatus(status){
         return axios.post(STATUS_API_BASEURL, status, { headers: authHeader() });
     }
 
-    getStatusById(status_id){
+    async getStatusById(status_id){
         return axios.get(STATUS_API_BASEURL + '/' + status_id, { headers: authHeader() });
     }
 
-    updateStatus(status){
+    async updateStatus(status){
         return axios.put(STATUS_API_BASEURL, status, { headers: authHeader() });
     }
 
-    deleteStatus(status_id){
+    async deleteStatus(status_id){
         return axios.delete(STATUS_API_BASEURL + '?id=' + status_id, { headers: authHeader() });
     }
 }

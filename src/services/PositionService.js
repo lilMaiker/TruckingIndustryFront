@@ -5,23 +5,23 @@ const POSITION_API_BASEURL = "https://localhost:7232/api/Positions";
 
 class PositionService {
 
-    getPositions() {
+    async getPositions() {
         return axios.get(POSITION_API_BASEURL, { headers: authHeader() });
     }
 
-    createPosition(position){
+    async createPosition(position){
         return axios.post(POSITION_API_BASEURL, position, { headers: authHeader() });
     }
 
-    getPositionById(position_id){
+    async getPositionById(position_id){
         return axios.get(POSITION_API_BASEURL + '/' + position_id, { headers: authHeader() });
     }
 
-    updatePosition(position){
+    async updatePosition(position){
         return axios.put(POSITION_API_BASEURL, position, { headers: authHeader() });
     }
 
-    deletePosition(position_id){
+    async deletePosition(position_id){
         return axios.delete(POSITION_API_BASEURL + '?id=' + position_id, { headers: authHeader() });
     }
 }

@@ -21,17 +21,12 @@ class CreateCargoComponent extends Component {
       errors: null,
       namecargo: '',
       weightcargo: Number,
-      }
+    }
 
-    //Handlers
     this.changeNameCargoHandler = this.changeNameCargoHandler.bind(this);
     this.changeWeightCargoHandler = this.changeWeightCargoHandler.bind(this);
-
-    //void
     this.saveCargo = this.saveCargo.bind(this);
   }
-
-  //#region Handlers For Select
 
   handleChangeTypeCargo(e) {
     console.log(e.value);
@@ -45,10 +40,7 @@ class CreateCargoComponent extends Component {
     this.setState({ oIdBid: e.value, oNameBid: e.label });
   }
 
-  //#endregion
-
   componentDidMount() {
-    //TypeCargo
     TypeCargoService.getTypeCargos().then((res) => {
       const options = res.data.map((d) => ({
         value: d.id,
@@ -57,7 +49,6 @@ class CreateCargoComponent extends Component {
       this.setState({ selectOptionsTypeCargo: options });
     });
 
-    //Bid
     BidService.getBid().then((res) => {
       const options = res.data.map((d) => ({
         value: d.id,
@@ -99,8 +90,6 @@ class CreateCargoComponent extends Component {
           console.log(this.state.errors);
       };
       
-
-
   changeNameCargoHandler = (event) => {
     this.setState({ namecargo: event.target.value });
   };
@@ -167,8 +156,6 @@ class CreateCargoComponent extends Component {
                       />
                     </label>
                   </div>
-
-
 
                   <button className="btn btn-success" onClick={this.saveCargo}>
                     <i class="fa-solid fa-floppy-disk"></i> Сохранить

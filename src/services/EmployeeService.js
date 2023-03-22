@@ -9,19 +9,19 @@ class EmployeeService {
         return axios.get(EMPLOYEE_API_BASEURL, { headers: authHeader() });
     }
 
-    createEmployee(employee){
+    async createEmployee(employee){
         return axios.post(EMPLOYEE_API_BASEURL, employee, { headers: authHeader() });
     }
 
-    getEmployeeById(employee_id){
+    async getEmployeeById(employee_id){
         return axios.get(EMPLOYEE_API_BASEURL + '/' + employee_id, { headers: authHeader() });
     }
 
-    updateEmployee(employee){
+    async updateEmployee(employee){
         return axios.put(EMPLOYEE_API_BASEURL, employee, { headers: authHeader() });
     }
 
-    deleteEmployee(employee_id){
+    async deleteEmployee(employee_id){
         return axios.delete(EMPLOYEE_API_BASEURL + '?id=' + employee_id, { headers: authHeader() });
     }
 }

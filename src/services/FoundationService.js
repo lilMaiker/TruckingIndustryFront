@@ -9,19 +9,19 @@ class FoundationService {
         return axios.get(FOUNDATION_API_BASEURL, { headers: authHeader() });
     }
 
-    createFoundation(foundation){
+    async createFoundation(foundation){
         return axios.post(FOUNDATION_API_BASEURL, foundation, { headers: authHeader() });
     }
 
-    getFoundationById(foundation_id){
+    async getFoundationById(foundation_id){
         return axios.get(FOUNDATION_API_BASEURL + '/' + foundation_id, { headers: authHeader() });
     }
 
-    updateFoundation(foundation){
+    async updateFoundation(foundation){
         return axios.put(FOUNDATION_API_BASEURL, foundation, { headers: authHeader() });
     }
 
-    deleteFoundation(foundation_id){
+    async deleteFoundation(foundation_id){
         return axios.delete(FOUNDATION_API_BASEURL + '?id=' + foundation_id, { headers: authHeader() });
     }
 }

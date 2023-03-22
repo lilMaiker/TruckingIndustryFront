@@ -5,27 +5,27 @@ const ROUTE_API_BASEURL = "https://localhost:7232/api/Route";
 
 class RouteService {
 
-    getRoute() {
+    async getRoute() {
         return axios.get(ROUTE_API_BASEURL, { headers: authHeader() });
     }
 
-    createRoute(route){
+    async createRoute(route){
         return axios.post(ROUTE_API_BASEURL, route, { headers: authHeader() });
     }
 
-    getRouteById(route_id){
+    async getRouteById(route_id){
         return axios.get(ROUTE_API_BASEURL + '/GetById/' + route_id, { headers: authHeader() });
     }
 
-    getRouteByIdBid(BidId){
+    async getRouteByIdBid(BidId){
         return axios.get(ROUTE_API_BASEURL + '/GetByIdBid/' + BidId, { headers: authHeader() });
     }
 
-    updateRoute(route){
+    async updateRoute(route){
         return axios.put(ROUTE_API_BASEURL, route, { headers: authHeader() });
     }
 
-    deleteRoute(route_id){
+    async deleteRoute(route_id){
         return axios.delete(ROUTE_API_BASEURL + '?id=' + route_id, { headers: authHeader() });
     }
 }

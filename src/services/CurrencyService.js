@@ -9,19 +9,19 @@ class CurrencyService {
         return axios.get(CURRENCY_API_BASEURL, { headers: authHeader() });
     }
 
-    createCurrency(currency){
+    async createCurrency(currency){
         return axios.post(CURRENCY_API_BASEURL, currency, { headers: authHeader() });
     }
 
-    getCurrencyById(currency_id){
+    async getCurrencyById(currency_id){
         return axios.get(CURRENCY_API_BASEURL + '/' + currency_id, { headers: authHeader() });
     }
 
-    updateCurrency(currency){
+    async updateCurrency(currency){
         return axios.put(CURRENCY_API_BASEURL, currency, { headers: authHeader() });
     }
 
-    deleteCurrency(currency_id){
+    async deleteCurrency(currency_id){
         return axios.delete(CURRENCY_API_BASEURL + '?id=' + currency_id, { headers: authHeader() });
     }
 }
