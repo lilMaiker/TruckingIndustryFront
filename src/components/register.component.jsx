@@ -111,15 +111,7 @@ class Register extends Component {
     return (
       <MDBContainer fluid className='p-4 background-radial-gradient rounded-6'>
       <MDBRow>
-        <MDBCol md='6' className='text-center text-md-start d-flex flex-column justify-content-center'>
-          <h1 className="my-5 display-3 fw-bold ls-tight px-3" style={{color: 'hsl(218, 81%, 95%)'}}>
-            Лучшее предложение <br />
-            <span style={{color: 'hsl(218, 81%, 75%)'}}>для твоего бизнеса</span>
-          </h1>
-          <p className='px-3' style={{color: 'hsl(218, 81%, 85%)'}}>
-          Разработчик Макар A. A.
-          </p>
-        </MDBCol>
+      
 
         <MDBCol md='6' className='position-relative'>
           <div id="radius-shape-1" className="position-absolute rounded-circle shadow-5-strong"></div>

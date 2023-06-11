@@ -16,11 +16,6 @@ import {
 }
 from 'mdb-react-ui-kit';
 
-import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
-import jwt_decode from "jwt-decode";
-import authService from "../services/auth.service";
-import GoogleOAuth from "./GoogleOAuth";
-
 const required = (value) => {
   if (!value) {
     return (
@@ -106,7 +101,7 @@ class Login extends Component {
             <MDBCardBody className='p-5 w-100 d-flex flex-column'>
 
               <h2 className="fw-bold mb-2 text-center">Авторизация</h2>
-              <p className="text-center mb-3">Пожалуйста введите Ваш Логин и Пароль!</p>
+              <p className="text-center mb-3">Пожалуйста, введите Электронную почту и Пароль</p>
 
           <Form
             onSubmit={this.handleLogin}
@@ -140,13 +135,13 @@ class Login extends Component {
 
             <div className="form-group">
               <button
-                className="btn btn-primary btn-block"
+                className="btn btn-success btn-block"
                 disabled={this.state.loading}
               >
                 {this.state.loading && (
                   <span className="spinner-border spinner-border-sm"></span>
                 )}
-                <span>Войти</span>
+                <span>Выполнить</span>
               </button>
             </div>
 
@@ -164,9 +159,6 @@ class Login extends Component {
               }}
             />
           </Form>
-
-         <GoogleOAuth />
-
           </MDBCardBody>
           </MDBCard>
           </MDBCol>

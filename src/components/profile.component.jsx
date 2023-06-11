@@ -23,19 +23,12 @@ class Profile extends Component {
 
     this.state = {
       picture : "https://microsac.es/wp-content/uploads/2019/06/8V1z7D_t20_YX6vKm.jpg",
-      name : '',
-      userGoogle : []
+      name : ''
     };
   }
 
   componentDidMount() {
     this._isMounted = true;
-    this.userGoogle = AuthService.getCurrentUserGoogle();
-    
-    console.log(this.userGoogle)
-    if (this.userGoogle !== null) {
-      this.setState({ picture: this.userGoogle.picture, name : this.userGoogle.name });
-    }
 
   }
   
@@ -58,20 +51,9 @@ class Profile extends Component {
               <MDBCardBody className="p-4">
                 <div className="d-flex text-black">
                   <div className="flex-shrink-0">
-                    
-              
-
-                  <MDBCardImage
-                      style={{ width: "150px", borderRadius: "10px" }}
-                      src={this.state.picture}
-                      alt="Generic placeholder image"
-                      fluid
-                      
-                    />
-                   
                   </div>
                   <div className="flex-grow-1 ms-3">
-                    <MDBCardTitle>Профиль</MDBCardTitle>
+                    <MDBCardTitle>Аккаунт сотрудника</MDBCardTitle>
 
                     {this.state.name ? (
                   <MDBCardText> {this.state.name}</MDBCardText>

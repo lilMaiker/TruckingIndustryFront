@@ -1,7 +1,7 @@
 import axios from "axios";
 import authHeader from "./auth-header";
 
-const APPLICATION_USER_API_BASEURL = "https://localhost:7232/api/Accounts";
+const APPLICATION_USER_API_BASEURL = "https://localhost:7094/api/Accounts";
 
 
 class ApplicationUserService {

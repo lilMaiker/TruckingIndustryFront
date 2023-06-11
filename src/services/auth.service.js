@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://localhost:7232/api/Accounts/";
+const API_URL = "https://localhost:7094/api/Accounts/";
 
 class AuthService {
   login(email, password) {
@@ -33,8 +33,8 @@ class AuthService {
     return axios.post(API_URL + 'ExternalLogin', googleCreadetionals);  
   }
 
-  getCurrentUserGoogle() {
-    return JSON.parse(localStorage.getItem('userGoogle'));;
+  getCurrentUser() {
+    return JSON.parse(localStorage.getItem('user'));;
   }
 }
 
